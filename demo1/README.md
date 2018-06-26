@@ -36,6 +36,7 @@ This demonstrates capabilites of AWS services to protect the end points in real-
 ### Step 1: Pre-requisites
 * Login to your AWS Console
 * Go to IAM and make sure your IAM user has administrator policy attached. This will help to run these demos without any issues.**This is for Demo purpose only. Not advised in real scenerios**
+If you would like to create new User follow these steps - https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console
 
 <img width="1372" alt="IAM Administrator rights needed" 
 src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Shot%202018-06-26%20at%2016.14.00.png">
