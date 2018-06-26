@@ -65,7 +65,7 @@ Now you have enabled your bucket to host the website.
 ### Step 3: Run the cloudformations templates to setup the demo1
 
 * Go to `CloudFormation` service
-
+* Select the region as "EU(Ireland)".
 
 * Click `Create Stack` Button
 <img width="1372" alt="Cloudformation" 
@@ -78,7 +78,7 @@ src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Sh
 
 * Fill in the details for the cloudformation<br><br>
   * `Stack Name` text box provide a name to your stack `nextunicorn-app`<br><br>
-  * `Website Bucket` text box provide the name of the bucket you created in Step 2 and click `Next` Button
+  * `Website Bucket` text box provide the name of the S3 bucket you just created in Step 2 and click `Next` Button
 <img width="1372" alt="provide website bucket name" 
 src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Shot%202018-06-26%20at%2016.32.03.png">
 
@@ -97,10 +97,12 @@ src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-0
 <img alt="Service Endpoint details" src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-06-26+at+16.38.35.png">
 
 ### Step 4: Slack incomming webhook
-
+The slack channel will be used to intimate the DevSecOps team of an honeypot attack. Hence you need a Slack account, slack channel and WebhookURL which your project will utliize to send notifications to you through Slack.
+* Setup an account in Slack if you dont have an exciting acccount - https://slack.com/create#email
+* Now create an incoming webhook URL - https://api.slack.com/incoming-webhooks
 
 ### Step 5: Update the Front end and upload
-* Go to `demo1/frontend/src` directory
+* Go to `demo1/frontend/src` directory in your local machine.
 * Open `functions.js` and update the first line<br>
 var URL with your `ServiceEndPoint` URL.<br>
 ```javascript
