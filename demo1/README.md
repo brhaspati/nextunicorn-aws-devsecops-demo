@@ -4,8 +4,31 @@
 Provide hands on experience in using AWS services to secure your internet facing service end points.
 
 # Use Case : Proactive defense using Honeypot and AWS WAF
+Demonstrate end point protection by using Honeypot to find the IP addresses of BOT and block the IP Address. Thereby preventing further scan and eventual attack.
 
-## Design goes here
+## How we achieve this
+We create a simple 3 tier architecture based web application. The simple webpage takes email address of user who wants to register for the product announcements. This email address is stored in the Dynambo DB. <br>
+
+We setup a simple honeypot by including an invisble button in the webpage. The legitimate user of the website through browser will not see this button. However, a BOT reading the HTML will click this assuming it is part of the form. 
+
+For the purpose of this excercise, we have made the `invisible button` visible to help the participants to click and simulate BOT behavior. 
+
+When the `invisible button` is clicked, Honeypot function (Lambda) will collect all the user-agent and IP address details of the BOT and notify the DevSecOps team using pre-configured Slack Channel. 
+
+Whilst this offers a way to detect suspicious activities, it does not stop the bot. 
+
+*To Demonstrate End Point protection* We then turn on AWS WAF and add OWASP 10 rule set and enable AWS cloudfront.
+
+We take on the role of DevSecOps to update the BOT's IP address to the Blacklist IPs of the AWS WAF.
+
+Now re-trying the webpage from the same IP address will give 403 access denied error message.
+
+This demonstrates capabilites of AWS services to protect the end points in real-time. In a real life scenario, updating the IP addresses in the AWS WAF should be automated using AWS Lambda. We are doing this manually in this excercise so that participants can understand each steps.
+
+
+
+## Reference Architecture
+
 <img alt="Proactive Defense Architecture" src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Demo1+Arch.png">
 
 ## Setup instructions
