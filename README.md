@@ -21,11 +21,11 @@ src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Sh
 It will not work or will give misleading error if you attempt to run some of the Cloudformation templates in another region.
 
 ### Step 2: Setting up S3 for website hosting
-* Go to `S3` service and click `Create Bucket` button
-** In the pop-up window give an unique name for your bucket. 
-** Make sure you choose, EU-WEST-1 as the region
-** Click next and next to complete the setup. 
-* Click the new bucket and go to the properties
+* Go to `S3` service and click `Create Bucket` button <br>
+   * In the pop-up window give an unique name for your bucket. <br>
+   * Make sure you choose, EU-WEST-1 as the region <br>
+   * Click next and next to complete the setup. <br>
+* Click the new bucket and go to the properties<br>
 <img width="1372" alt="S3 properties" 
 src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Shot%202018-06-26%20at%2016.26.33.png">
 * Select the `Static Web Hosting` option and fill in the details as below
@@ -48,8 +48,8 @@ src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Sh
 src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Shot%202018-06-26%20at%2016.17.43.png">
 
 * Fill in the details for the cloudformation<br><br>
-** `Stack Name` text box provide a name to your stack `nextunicorn-app`<br><br>
-** `Website Bucket` text box provide the name of the bucket you created in Step 2 and click `Next` Button
+  * `Stack Name` text box provide a name to your stack `nextunicorn-app`<br><br>
+  * `Website Bucket` text box provide the name of the bucket you created in Step 2 and click `Next` Button
 <img width="1372" alt="provide website bucket name" 
 src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Shot%202018-06-26%20at%2016.32.03.png">
 
