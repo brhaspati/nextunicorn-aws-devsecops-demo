@@ -46,6 +46,10 @@ src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Sh
 
 * If you are login as a "Root User" then you may not need to do the above mentioned step. 
 
+```
+Tip: As you follow the instructions, please create a notes.txt file and copy the URL that are created. It will be handy when you have to setup the configurations to run the application
+```
+
 
 ### Step 2: Setting up S3 for website hosting
 
@@ -100,21 +104,30 @@ src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-0
 * Once the stack creation is complete, click the `outputs` tab to get your `ServiceEndPoint` URL. You will need this for subsequent steps
 <img alt="Service Endpoint details" src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-06-26+at+16.38.35.png">
 
+```
+Tip: Service Endpoint : https://7aa42aaq5h.execute-api.eu-west-1.amazonaws.com/dev
+```
+
 ### Step 4: Slack incoming webhook
 The slack channel will be used to intimate the DevSecOps team of an honeypot attack. Hence you need a Slack account, slack channel and WebhookURL which your project will utliize to send notifications to you through Slack.
 * Setup an account in Slack if you dont have an existing acccount - https://slack.com/create#email
 * Now create an incoming webhook URL - https://api.slack.com/incoming-webhooks
 
+```
+Tip: Slack Incoming webhook URL: https://api.slack.com/XXXXXX/YYYYYY/YOURWEBHOOKID
+```
+
 ### Step 5: Update the Front end and upload
 * Go to `demo1` directory in your local machine.
-* Open `functions.js` and update the first line<br>
+* Open `functions.js` with your favorite editor and update the variable URL with the service endpoint URL that you copied from the Cloudformation outputs tab.<br>
 var URL with your `ServiceEndPoint` URL.<br>
+
 ```javascript
 var URL = "https://yourserviceendpoint/dev"
 ```
 <img alt="update the var"
 src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-06-26+at+16.45.55.png">
-*Save the file.
+* Save the file.
 
 * Now Open `notifications-config.json`. Update your Slackchannel webhookURL as below.
 
@@ -127,25 +140,31 @@ src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-0
 ```
 
 * Now upload the following files to your s3 bucket.
-* notifications-config.json
-* functions.js
-* index.html
+ * notifications-config.json
+ * functions.js
+ * index.html
 * In the permissions during upload ensure to select *"Grant public read access to this object"*
 Now your setup is complete.
 
 ### Finding your website link
-* Go to S3 Bucket. 
-* Here select `Properties`
-* Here select `Static Web hosting` box.
-* Here copy the endpoint link. 
+* Go to AWS Console, Select S3 service
+ * Click the S3 bucket **mywebsite-bucket** you created step 2
+ * Here select `Properties`
+ * Here select `Static Web hosting` box.
+ * Here copy the endpoint link. 
 
+```
+Tip: website URL : http://mywebsite-bucket.s3-website-eu-west-1.amazonaws.com/
+```
 
 # Lets begin the testing!
 
 ## Submit the form as human. 
 * In the browser window paste the endpoint link you copied from your S3 bucket. 
-* Submit your form.
-* You can verify if it has been created properly by looking at the dynamodb table `NextUnicornMailingListTable`
+* Enter your email id 
+* Click the `Subscribe` button.
+You will see an alert when it is successfully updated.
+
 
 ## Submit the form as Bot.
 * On the top right hand corner of your web page, you will find the button `Click if you are a Bot`
