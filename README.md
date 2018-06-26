@@ -72,13 +72,25 @@ src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-0
 
 ### Step 5: Update the Front end and upload
 * Go to `demo1/frontend/src` directory
-* Open `functions.js` and update the first line
-var URL with your `ServiceEndPoint` URL.
+* Open `functions.js` and update the first line<br>
+var URL with your `ServiceEndPoint` URL.<br>
 ```javascript
 var URL = "https://yourserviceendpoint/dev"
 ```
 <img alt="update the var"
 src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-06-26+at+16.45.55.png">
+
+* Open `notifications-config.json`
+
+```javascript
+ "alert": {
+                "slack": {
+                        "enabled": "true",
+                        "webhook-url": "https://hooks.slack.com/services/XXXXXX/YYY/YOURWEBHOOK"
+                },
+```
+
+* Copy the files to the website S3 bucket
 
 
 ### Step 6: Verify the installation
