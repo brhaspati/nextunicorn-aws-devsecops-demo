@@ -6,6 +6,7 @@ Provide hands on experience in using AWS services to secure your internet facing
 # Use Case : Proactive defense using Honeypot and AWS WAF
 
 ## Design goes here
+<img alt="Proactive Defense Architecture" src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Demo1+Arch.png">
 
 ## Setup instructions
 
