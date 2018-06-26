@@ -131,42 +131,46 @@ Now your setup is complete.
 
 ### Finding your website link
 * Go to S3 Bucket. 
-* Here select "Properties"
-* Here select Static Web hosting" box.
+* Here select `Properties`
+* Here select `Static Web hosting` box.
 * Here copy the endpoint link. 
 
 
 # Lets begin the testing!
 
-##Submit the form as human. 
+## Submit the form as human. 
 * In the browser window paste the endpoint link you copied from your S3 bucket. 
-Submit your form.
-You can verify if it has been created properly by looking at the dynamodb table `NextUnicornMailingListTable`
+* Submit your form.
+* You can verify if it has been created properly by looking at the dynamodb table `NextUnicornMailingListTable`
 
-##Submit the form as Bot.
+## Submit the form as Bot.
 * On the top right hand corner of your web page, you will find the button `Click if you are a Bot`
 * click the `Click if you are Bot` button.
-* In your slack channel you will find the following message "HonetToken triggered".
-* Now copy the "Source IP Address" mentioned in the slack message..
+* In your slack channel you will find the following message `HoneyToken triggered`.
+* Now copy the `Source IP Address` mentioned in the slack message..
 
-##Setting up End point protection by enabling WAF and Cloudfront.
+## Setting up End point protection by enabling WAF and Cloudfront.
 Setups shown in Workshop
 
-##Update WAF with the IP address to block
+## Update WAF with the IP address to block
 setup as shown in workshop
 
-##Test access by BOT
-The Ip address is blocked and you have no more access to the site from this IP. 
-Thus preventing further scan and attack. 
-In real life scenerio, the WAF blocked should be automated. The honeypot lambda should update the WAF rules once triggered.
+## Test access by BOT
+<br>The Ip address is blocked and you have no more access to the site from this IP. <br>
+Thus preventing further scan and attack. <br>
+In real life scenerio, the WAF blocked should be automated. The honeypot lambda should update the WAF rules once triggered.<br>
 
-Well Done! you have completed Demo1. 
+**Well Done! you have completed Demo1**
 
 
 
 
 # Trouble Shooting: 
 This is just to check if setup was created properly
+
+## Right AWS region
+Ensure you are in the right AWS region.
+
 ## Testing honeyLambda
 Go to the browser and type the service endpoint URL you copied from the Cloudformation stack URL.
 ```javascript
