@@ -102,7 +102,7 @@ The slack channel will be used to intimate the DevSecOps team of an honeypot att
 * Now create an incoming webhook URL - https://api.slack.com/incoming-webhooks
 
 ### Step 5: Update the Front end and upload
-* Go to `demo1/frontend/src` directory in your local machine.
+* Go to `demo1` directory in your local machine.
 * Open `functions.js` and update the first line<br>
 var URL with your `ServiceEndPoint` URL.<br>
 ```javascript
@@ -110,8 +110,9 @@ var URL = "https://yourserviceendpoint/dev"
 ```
 <img alt="update the var"
 src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-06-26+at+16.45.55.png">
+*Save the file.
 
-* Open `notifications-config.json`
+* Now Open `notifications-config.json`. Update your Slackchannel webhookURL as below.
 
 ```javascript
  "alert": {
@@ -121,13 +122,53 @@ src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-0
                 },
 ```
 
-* Copy the files to the website S3 bucket
+* Now upload the following files to your s3 bucket.
+* notifications-config.json
+* functions.js
+* index.html
+* In the permissions during upload ensure to select *"Grant public read access to this object"*
+Now your setup is complete.
+
+### Finding your website link
+* Go to S3 Bucket. 
+* Here select "Properties"
+* Here select Static Web hosting" box.
+* Here copy the endpoint link. 
 
 
-### Step 6: Verify the installation
+# Lets begin the testing!
 
-#### Testing honeyLambda
-Go to the browser and type the URL with
+##Submit the form as human. 
+* In the browser window paste the endpoint link you copied from your S3 bucket. 
+Submit your form.
+You can verify if it has been created properly by looking at the dynamodb table `NextUnicornMailingListTable`
+
+##Submit the form as Bot.
+* On the top right hand corner of your web page, you will find the button `Click if you are a Bot`
+* click the `Click if you are Bot` button.
+* In your slack channel you will find the following message "HonetToken triggered".
+* Now copy the "Source IP Address" mentioned in the slack message..
+
+##Setting up End point protection by enabling WAF and Cloudfront.
+Setups shown in Workshop
+
+##Update WAF with the IP address to block
+setup as shown in workshop
+
+##Test access by BOT
+The Ip address is blocked and you have no more access to the site from this IP. 
+Thus preventing further scan and attack. 
+In real life scenerio, the WAF blocked should be automated. The honeypot lambda should update the WAF rules once triggered.
+
+Well Done! you have completed Demo1. 
+
+
+
+
+# Trouble Shooting: 
+This is just to check if setup was created properly
+## Testing honeyLambda
+Go to the browser and type the service endpoint URL you copied from the Cloudformation stack URL.
 ```javascript
 https://o8qqpwhy5d.execute-api.eu-west-1.amazonaws.com/dev/v1/get-pass
 ```
