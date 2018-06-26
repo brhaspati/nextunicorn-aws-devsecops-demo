@@ -33,7 +33,7 @@ This demonstrates capabilites of AWS services to protect the end points in real-
 
 ## Setup instructions
 
-Note : Please always select your region as "EU-WEST-1". We have hard corded all the configurations to point to EU-WEST-1 to simplify the setup of the demo. It will not work or will give misleading error if you attempt to run some of the Cloudformation templates in another region.
+Note : Please always select your region as "EU-WEST-1" or EU(Ireland). We have hard corded all the configurations to point to EU-WEST-1 to simplify the setup of the demo. It will not work or will give misleading error if you attempt to run some of the Cloudformation templates in another region.
 
 ### Step 1: Pre-requisites
 * Login to your AWS Console
@@ -49,7 +49,7 @@ src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Sh
 ### Step 2: Setting up S3 for website hosting
 * Go to `S3` service and click `Create Bucket` button <br>
    * In the pop-up window give an unique name for your bucket. <br>
-   * Make sure you choose, EU-WEST-1 as the region <br>
+   * Make sure you choose, EU(Ireland) as the region <br>
    * Click next and next to complete the setup. <br>
 * Click the new bucket and go to the properties<br>
 <img width="1372" alt="S3 properties" 
