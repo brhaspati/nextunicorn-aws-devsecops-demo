@@ -90,7 +90,7 @@ https://o8qqpwhy5d.execute-api.eu-west-1.amazonaws.com/dev/v1/get-pass
 ```
 
 You will get following message when everything is setup correctly
-<img alt="Honey pot is working@
+<img alt="Honey pot is working"
 src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-06-26+at+16.56.51.png">
 
 or 
