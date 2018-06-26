@@ -1,9 +1,9 @@
-# AWS Workshop:  `DevSecOps - Building secure applications in AWS`
 
-# Objective
-Provide hands on experience in using AWS services to secure your internet facing applications.
 
-# Demo 1
+# AWS DevSecOps Workshop Demo 1 
+Provide hands on experience in using AWS services to secure your internet facing service end points.
+
+# Use Case : Proactive defense using Honeypot and AWS WAF
 
 ## Design goes here
 
