@@ -51,12 +51,15 @@ src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Sh
    * In the pop-up window give an unique name for your bucket. <br>
    * Make sure you choose, EU(Ireland) as the region <br>
    * Click next and next to complete the setup. <br>
-* Click the new bucket and go to the properties<br>
+   * Your S3 Bucket is created.
+   
+* Now click the new bucket your created and go to the properties<br>
 <img width="1372" alt="S3 properties" 
 src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Shot%202018-06-26%20at%2016.26.33.png">
 * Select the `Static Web Hosting` option and fill in the details as below
 <img width="1372" alt="S3 enable static hosting" 
 src= "http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Shot%202018-06-26%20at%2016.26.58.png">
+Now you have enabled your bucket to host the website.
 
 
 ### Step 3: Run the cloudformations templates to setup the demo1
