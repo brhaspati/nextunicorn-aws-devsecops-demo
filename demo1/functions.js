@@ -1,5 +1,9 @@
-var URL = "https://anfc79ka6d.execute-api.eu-west-1.amazonaws.com/dev"
+// Get the serviceendpoint of your service from the cloudformation.
+// Go to the output tab and copy the link
+// It will look like this 
+//var URL = "https://anfc79aa6d.execute-api.eu-west-1.amazonaws.com/dev"
 
+var URL = "https://<your-service-endpoint/dev"
 
 function submitBot(){
 var honeyURL = URL + "/v1/get-pass"

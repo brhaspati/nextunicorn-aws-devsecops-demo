@@ -20,7 +20,7 @@
 	"alert": {
 		"slack": {
 			"enabled": "true",
-			"webhook-url": "https://hooks.slack.com/services/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"
+			"webhook-url": "https://hooks.slack.com/services/XXXXXX/YYYYYY/YOURWEBHOOK"
 		},
 		"email": {
 			"enabled": "false",
