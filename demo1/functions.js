@@ -14,15 +14,6 @@ var honeyURL = URL + "/v1/get-pass"
     }
     xmlHttp.open("GET", honeyURL, true); // true for asynchronous 
     xmlHttp.send(null);
-    var email = "bot"+ Math.floor((Math.random() * 1000000) + 1) +"@botmail.com";
-    $.ajax(URL + "/subscribe", {
-    	method: 'POST',
-    	contentType: 'application/json',
-        data: JSON.stringify({email: email}),
-	beforeSend: function(xmlHttpRequest) {
-     		xmlHttpRequest.withCredentials = true;
-        }
-     })
 }
 
 function submit(){
@@ -53,6 +44,7 @@ function submit(){
 					}
 					else{
 						   
+						    window.alert("Thank you. We have registered your email " + email);
 						    window.location = "index.html";
 						}
    			 	},
