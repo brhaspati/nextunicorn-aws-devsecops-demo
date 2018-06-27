@@ -47,7 +47,8 @@ src="http://devsecops-demo-images.s3-website-eu-west-1.amazonaws.com/Screen%20Sh
 * If you are login as a "Root User" then you may not need to do the above mentioned step. 
 
 ```
-Tip: As you follow the instructions, please create a notes.txt file and copy the URL that are created. It will be handy when you have to setup the configurations to run the application
+Top Tip: As you follow the instructions, please create a notes.txt file and copy top tips links that you generate
+. <br> It will be handy when you have to setup the configurations to run the application
 ```
 
 
@@ -100,13 +101,23 @@ src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-0
 <img width="1372" alt="final screen" 
 src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-06-26+at+16.32.38.png">
 
-* Wait for the stack to be created
+* Wait for the stack to be created. It takes around 10 minutes for the setup to complete.
+
 * Once the stack creation is complete, click the `outputs` tab to get your `ServiceEndPoint` URL. You will need this for subsequent steps
 <img alt="Service Endpoint details" src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-06-26+at+16.38.35.png">
 
 ```
-Tip: Service Endpoint : https://7aa42aaq5h.execute-api.eu-west-1.amazonaws.com/dev
+Top Tip: note down the follwoing in your notes.txt<br> Service Endpoint : https://7aa42aaq5h.execute-api.eu-west-1.amazonaws.com/dev
 ```
+
+### Step 3a: Setup AWS WAF ACL using OWASP Top 10
+* Go to `CloudFormation` service and `Create Stack` and upload `2-setup-waf-owasp-10-base.yml` from demo1 directory.
+* **Stack Name** Provide a stack name. For example, WAF-OWASP-Top10
+* All the defaults are prepopulated. **DO NOT CHANGE** 
+* Click few `Next` button till you reach `Create Stack`
+
+* It will take around 10 minutes to finish
+
 
 ### Step 4: Slack incoming webhook
 The slack channel will be used to intimate the DevSecOps team of an honeypot attack. Hence you need a Slack account, slack channel and WebhookURL which your project will utliize to send notifications to you through Slack.
@@ -125,7 +136,7 @@ var URL with your `ServiceEndPoint` URL.<br>
 ```javascript
 var URL = "https://yourserviceendpoint/dev"
 ```
-<img alt="update the var"
+<img alt="update the var" 
 src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-06-26+at+16.45.55.png">
 * Save the file.
 
@@ -144,6 +155,7 @@ src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-0
  * functions.js
  * index.html
 * In the permissions during upload ensure to select *"Grant public read access to this object"*
+<img alt="Make files Read Only"  width="300" height="300" src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/makingS3ObjectsPublic.png">
 Now your setup is complete.
 
 ### Finding your website link
@@ -152,9 +164,10 @@ Now your setup is complete.
  * Here select `Properties`
  * Here select `Static Web hosting` box.
  * Here copy the endpoint link. 
+<img alt="S3 WebURL"  width="300" height="300" src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/WebhostingURL.png">
 
 ```
-Tip: website URL : http://mywebsite-bucket.s3-website-eu-west-1.amazonaws.com/
+Top Tip: website URL : http://mywebsite-bucket.s3-website-eu-west-1.amazonaws.com/
 ```
 
 # Lets begin the testing!
