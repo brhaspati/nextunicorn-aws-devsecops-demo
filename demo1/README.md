@@ -122,6 +122,7 @@ Top Tip: note down the follwoing in your notes.txt<br> Service Endpoint : https:
 ### Step 4: Slack incoming webhook
 The slack channel will be used to intimate the DevSecOps team of an honeypot attack. Hence you need a Slack account, slack channel and WebhookURL which your project will utliize to send notifications to you through Slack.
 * Setup an account in Slack if you dont have an existing acccount - https://slack.com/create#email
+
 * Now create an incoming webhook URL - https://api.slack.com/incoming-webhooks
 
 ```
@@ -174,6 +175,7 @@ Top Tip: website URL : http://mywebsite-bucket.s3-website-eu-west-1.amazonaws.co
 
 ## Submit the form as human. 
 * In the browser window paste the endpoint link you copied from your S3 bucket. 
+<img alt="s3 website" height="600" width="900" src="https://s3-eu-west-1.amazonaws.com/devsecops-demo-images/Screen+Shot+2018-06-27+at+09.37.52.png">
 * Enter your email id 
 * Click the `Subscribe` button.
 You will see an alert when it is successfully updated.
